@@ -33,7 +33,7 @@ public class NextQuestionService {
         int totalQuestions = quizSessionModel.getTotalQuestions();
 
         List<QuestionModel>  allQuestions = questionRepo.findAll();
-System.out.println(allQuestions);
+       System.out.println(allQuestions);
         if (allQuestions.size() == 0 || currentIndex >= totalQuestions){
             quizSessionModel.setCompleted(true);
             quizSessionRepo.save(quizSessionModel);
