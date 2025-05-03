@@ -40,7 +40,7 @@ public class ResultService {
         long totalQuestion  = answers.size();
         long correctAnswers = answers.stream().filter(UserAnswerModel::isCorrect).count();
 
-        return ResponseEntity.ok("Correct Answers :" + correctAnswers + "out of" + totalQuestion);
+        return ResponseEntity.ok("Correct Answers : " + correctAnswers + "out of : " +  totalQuestion);
 
     }
 }
