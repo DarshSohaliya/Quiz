@@ -6,18 +6,17 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class QuizQandA {
+public class QuestionModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long QuestionNo;
-    String question;
+    private Long questionId;
 
-    public Long getQuestionNo() {
-        return QuestionNo;
+    public Long getQuestionId() {
+        return questionId;
     }
 
-    public void setQuestionNo(Long questionNo) {
-        QuestionNo = questionNo;
+    public void setQuestionId(Long questionId) {
+        this.questionId = questionId;
     }
 
     public String getQuestion() {
@@ -26,14 +25,6 @@ public class QuizQandA {
 
     public void setQuestion(String question) {
         this.question = question;
-    }
-
-    public String getAnswer() {
-        return answer;
-    }
-
-    public void setAnswer(String answer) {
-        this.answer = answer;
     }
 
     public String getOptionA() {
@@ -68,9 +59,15 @@ public class QuizQandA {
         this.optionD = optionD;
     }
 
-    String answer;
-    String optionA;
-    String optionB;
-    String optionC;
-    String optionD;
+    public String getAnswer() {
+        return answer;
+    }
+
+    public void setAnswer(String answer) {
+        this.answer = answer;
+    }
+
+    private String question;
+    private String optionA,optionB,optionC,optionD;
+    private String answer;
 }

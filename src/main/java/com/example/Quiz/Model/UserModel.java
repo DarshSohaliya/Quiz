@@ -1,25 +1,16 @@
 package com.example.Quiz.Model;
 
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class User {
+public class UserModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long userId;
-    String userName;
-    String mobileNumber;
-
-    public String getMobileNumber() {
-        return mobileNumber;
-    }
-
-    public void setMobileNumber(String mobileNumber) {
-        this.mobileNumber = mobileNumber;
-    }
+    private Long userId;
 
     public Long getUserId() {
         return userId;
@@ -29,12 +20,20 @@ public class User {
         this.userId = userId;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getName() {
+        return Name;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setName(String name) {
+        Name = name;
+    }
+
+    public String getMobileNumber() {
+        return mobileNumber;
+    }
+
+    public void setMobileNumber(String MobileNumber) {
+        mobileNumber = MobileNumber;
     }
 
     public int getTotalQuetion() {
@@ -45,5 +44,7 @@ public class User {
         this.totalQuetion = totalQuetion;
     }
 
-    int totalQuetion;
+    private String Name;
+    private String mobileNumber;
+    private int totalQuetion;
 }

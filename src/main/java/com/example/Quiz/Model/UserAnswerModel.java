@@ -6,22 +6,17 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class UserAnswer {
+public class UserAnswerModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long Id;
-
-    private Long sessionId;
-    private Long questionId;
-
-    private String selectedOption;
+    private Long id;
 
     public Long getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Long id) {
-        Id = id;
+        this.id = id;
     }
 
     public Long getSessionId() {
@@ -40,22 +35,24 @@ public class UserAnswer {
         this.questionId = questionId;
     }
 
-    public String getSelectedOption() {
-        return selectedOption;
+    public String getSelectedAnswer() {
+        return selectedAnswer;
     }
 
-    public void setSelectedOption(String selectedOption) {
-        this.selectedOption = selectedOption;
+    public void setSelectedAnswer(String selectedAnswer) {
+        this.selectedAnswer = selectedAnswer;
     }
 
-    public boolean isIsaCorrect() {
-        return isaCorrect;
+    public boolean isCorrect() {
+        return correct;
     }
 
-    public void setIsaCorrect(boolean isaCorrect) {
-        this.isaCorrect = isaCorrect;
+    public void setCorrect(boolean correct) {
+        this.correct = correct;
     }
 
-    private boolean isaCorrect;
-
+    private Long sessionId;
+    private Long questionId;
+    private String selectedAnswer;
+    private boolean correct;
 }

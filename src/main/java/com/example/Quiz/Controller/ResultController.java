@@ -1,4 +1,4 @@
 package com.example.Quiz.Controller;
 
-public class SubmitController {
+public class ResultController {
 }
